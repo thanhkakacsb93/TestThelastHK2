@@ -56,7 +56,6 @@ function App() {
       return []
     }
   })
-  console.log(ListTodo);
 
   return (
     <>

@@ -8,7 +8,6 @@ import "./All.css"
 const All = () => {
     const { ListTodo } = useContext(Mystor)
     handleArrange(ListTodo)
-    console.log("ListTodo", ListTodo);
     const list = ListTodo.map((item) => <LisstFrameNotDlt
         key={item.id}
         id={item.id}

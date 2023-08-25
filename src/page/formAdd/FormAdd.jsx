@@ -14,12 +14,19 @@ const FormAdd = () => {
         },
         onSubmit: (values) => {
             if (values.txt) {
-                console.log(values);
-                const valuesFull = { ...values, id: uuidv4() }
-                const UpdateListTodo = [...ListTodo, valuesFull]
-                DataLocalStorage(UpdateListTodo)
-                setListTodo(UpdateListTodo)
-                resetForm()
+                const checktValueTxt = ListTodo.some((item) => item.txt === values.txt)
+                if (checktValueTxt) {
+                    alert('Đã tồn tại')
+                }
+                else {
+                    const valuesFull = { ...values, id: uuidv4() }
+                    const UpdateListTodo = [...ListTodo, valuesFull]
+                    DataLocalStorage(UpdateListTodo)
+                    setListTodo(UpdateListTodo)
+                    resetForm()
+                }
+
+
 
             }
         }
